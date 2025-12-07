@@ -3,13 +3,11 @@
 DATA_DIR="/data"
 LOCK_FILE="$DATA_DIR/sync.lock"
 
-# Генерируем ID
 MY_ID=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 8 | head -n 1)
 SEQ=1
 
 mkdir -p "$DATA_DIR"
 
-# Открываем дескриптор 200
 exec 200>"$LOCK_FILE"
 
 echo "Container $MY_ID started."
