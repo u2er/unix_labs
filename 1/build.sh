@@ -4,7 +4,7 @@ set -e
 
 die() { echo "Ошибка: $1" >&2; exit "$2"; }
 
-[ "$#" -ne 2 ] && [ -f "$1" ] || die "Укажите один существующий исходный файл" 2
+[ "$#" -eq 1 ] && [ -f "$1" ] || die "Укажите один существующий исходный файл" 2
 
 TEMP_DIR=$(mktemp -d build.XXXXXX) || die "Не удалось создать временный каталог" 3
 trap 'rm -rf "$TEMP_DIR"' EXIT HUP INT QUIT TERM
