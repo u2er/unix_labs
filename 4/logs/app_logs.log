@@ -1,0 +1,8 @@
+2025-12-14 22:41:38 | INFO     | worker.py:58 | Connecting to RabbitMQ...
+2025-12-14 22:41:38 | INFO     | worker.py:81 |  [*] Worker started. Waiting for messages.
+2025-12-14 22:41:38 | INFO     | worker.py:58 | Connecting to RabbitMQ...
+2025-12-14 22:41:38 | INFO     | worker.py:81 |  [*] Worker started. Waiting for messages.
+2025-12-14 22:47:51 | INFO     | api.py:127 | Queued YouTube task 5
+2025-12-14 22:47:51 | INFO     | worker.py:32 | Processing task 5 (youtube)
+2025-12-14 22:48:07 | INFO     | summarizer.py:96 | Handling request 6f856bd0-7dab-4f60-9a46-18759498a928 for youtube video
+2025-12-14 22:48:35 | INFO     | worker.py:50 | Task 5 finished
