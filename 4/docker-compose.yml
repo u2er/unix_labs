@@ -1,5 +1,4 @@
 services:
-  # 1. База данных
   db:
     image: postgres:15-alpine
     environment:
@@ -11,7 +10,6 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
 
-  # 2. Брокер
   rabbitmq:
     image: rabbitmq:3-management
     ports:
@@ -23,7 +21,6 @@ services:
       timeout: 5s
       retries: 5
 
-  # 3. API (Producer)
   api:
     build: .
     command: uvicorn app.api:app --host 0.0.0.0 --port 8000
@@ -38,13 +35,12 @@ services:
       db:
         condition: service_started
 
-  # 4. Worker
   worker:
     build: .
     command: python app/worker.py
     deploy:
       mode: replicated
-      replicas: 2
+      replicas: 5
     volumes:
       - ./logs:/app/logs
       - ./temp:/app/temp
